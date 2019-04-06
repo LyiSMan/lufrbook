@@ -10,9 +10,7 @@
 	Name: <input type="text" name="name">
 	<input type="submit">
 	</form>
-	if (isset($_POST['name'])) {
-		$name = $_POST['name'];
-	}
+	$name = $_POST['name'];
 	$filename = 'friends.txt';
 	$file = fopen( $filename, "r" );
 	while (!feof($file)) {
