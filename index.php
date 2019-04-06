@@ -1,13 +1,25 @@
 <html>
 <head> 
 	<title>
-	Hello World
+	
 	</title> 
 </head> 
 <body> 
-	<?php 
-	$name = "World"; 
-	echo "<h1>Hello, $name!</h1>"; 
-	?> 
+<?php 
+	<form action="index.php" method="post">
+	Name: <input type="text" name="name">
+	<input type="submit">
+	</form>
+		
+	$filename = 'friends.txt';
+	$file = fopen( $filename, "r" );
+	while (!feof($file)) {
+    		echo fget($file);
+	}
+
+	$file = fopen( $filename, "a" );
+	fwrite( $file, "some string" );
+	
+?> 
 </body> 
 </html>
