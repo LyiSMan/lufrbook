@@ -1,7 +1,7 @@
 <html>
 <head> 
 	<title>
-	
+	Friends book
 	</title> 
 </head> 
 <body> 
@@ -10,15 +10,18 @@
 	Name: <input type="text" name="name">
 	<input type="submit">
 	</form>
-		
+	if (isset($_POST['name'])) {
+		$name = $_POST['name'];
+	}
 	$filename = 'friends.txt';
 	$file = fopen( $filename, "r" );
 	while (!feof($file)) {
-    		echo fget($file);
+    		echo fgets($file);
 	}
-
-	$file = fopen( $filename, "a" );
-	fwrite( $file, "some string" );
+	fclose($file);
+	//$file = fopen( $filename, "a" );
+	
+	//fwrite( $file, "$name\n" );
 	
 ?> 
 </body> 
