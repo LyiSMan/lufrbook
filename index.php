@@ -11,7 +11,7 @@
 	</form>
 <ul>
 <?php
-	$filter = trim($_POST(['nameFilter']);
+	$filter = trim($_POST['nameFilter']);
 	if (strlen($name) == 0) {
 		$filename = 'friends.txt';
 		$file = fopen( $filename, "r" );
