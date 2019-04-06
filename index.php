@@ -7,8 +7,9 @@
 <body> 
 	<form action="index.php" method="post">
 	Name: <input type="text" name="name">
-	<input type="submit">
+	<input type="submit" value="Add new friend">
 	</form>
+	<h1>My best friends:</h1>
 <ul>
 <?php
 	$filter = trim($_POST['nameFilter']);
@@ -55,7 +56,8 @@
 </ul>
 	<form action="index.php" method="post">
 	<input type="text" name="nameFilter" value="<?=$nameFilter?>">
-	<input type="submit">
+	<input type="submit" value="Filter list">
+	<input type="checkbox" name="startingWith" value="TRUE">Only names starting with</input>
 	</form>
 </body> 
 </html>
