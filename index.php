@@ -12,7 +12,7 @@
 <ul>
 <?php
 	$filter = trim($_POST['nameFilter']);
-	if (strlen($name) == 0) {
+	if (strlen($filter) <= 0) {
 		$filename = 'friends.txt';
 		$file = fopen( $filename, "r" );
 		while (!feof($file)) {
