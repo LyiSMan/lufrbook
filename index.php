@@ -12,6 +12,7 @@
 <ul>
 <?php
 	$filter = trim($_POST['nameFilter']);
+	$starting = $_POST['startingWith'];
 	if (strlen($filter) <= 0) {
 		$filename = 'friends.txt';
 		$file = fopen( $filename, "r" );
@@ -23,12 +24,24 @@
 		}
 	}
 	else {
-		$filename = 'friends.txt';
-		$file = fopen( $filename, "r" );
-		while (!feof($file)) {
-    			$name = trim(fgets($file));
-			if (strlen($name) > 0 and strstr($name, $filter)) {
-				echo "<li>$name</li>";
+		if ($starting) {
+			$filename = 'friends.txt';
+			$file = fopen( $filename, "r" );
+			while (!feof($file)) {
+				$name = trim(fgets($file));
+				if (strlen($name) > 0 and (strpos($name, $filter) === 1)) {
+					echo "<li>$name</li>";
+				}
+			}
+		}
+		else {
+			$filename = 'friends.txt';
+			$file = fopen( $filename, "r" );
+			while (!feof($file)) {
+				$name = trim(fgets($file));
+				if (strlen($name) > 0 and strstr($name, $filter)) {
+					echo "<li>$name</li>";
+				}
 			}
 		}
 	}
