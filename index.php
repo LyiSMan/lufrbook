@@ -55,9 +55,9 @@
 ?>	
 </ul>
 	<form action="index.php" method="post">
+	<input type="checkbox" name="startingWith">Only names starting with</input>
 	<input type="text" name="nameFilter" value="<?=$nameFilter?>">
 	<input type="submit" value="Filter list">
-	<input type="checkbox" name="startingWith" value="TRUE">Only names starting with</input>
 	</form>
 </body> 
 </html>
