@@ -18,7 +18,7 @@
 	while (!feof($file)) {
     		echo fgets($file);
 	}
-	fclose($file);
+	
 	//$file = fopen( $filename, "a" );
 	
 	//fwrite( $file, "$name\n" );
