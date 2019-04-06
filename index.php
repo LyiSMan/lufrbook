@@ -11,23 +11,38 @@
 	</form>
 <ul>
 <?php
-	
-	$filename = 'friends.txt';
-	$file = fopen( $filename, "r" );
-	while (!feof($file)) {
-    		$name = trim(fgets($file));
-		if (strlen($name) > 0){
-			echo "<li>$name</li>";
+	$filter = trim($_POST(['nameFilter']);
+	if (strlen($name) == 0) {
+		$filename = 'friends.txt';
+		$file = fopen( $filename, "r" );
+		while (!feof($file)) {
+    			$name = trim(fgets($file));
+			if (strlen($name) > 0){
+				echo "<li>$name</li>";
+			}
 		}
 	}
-	
+	else {
+		$filename = 'friends.txt';
+		$file = fopen( $filename, "r" );
+		while (!feof($file)) {
+    			$name = trim(fgets($file));
+			if (strlen($name) > 0 and strstr($name, $filter) {
+				echo "<li>$name</li>";
+			}
+		}
+	}
 	$name = trim($_POST['name']);
 	if (strlen($name) > 0) {
 		echo "<li><b>$name</b></li>";
 		$file = fopen( $filename, "a" );
 		fwrite( $file, "$name\n" );
 	}
-?> 
+?>	
 </ul>
+	<form action="index.php" method="post">
+	<input type="text" name="nameFilter" value="<?=$nameFilter?>">
+	<input type="submit">
+	</form>
 </body> 
 </html>
