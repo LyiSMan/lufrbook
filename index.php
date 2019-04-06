@@ -30,7 +30,7 @@
 			$file = fopen( $filename, "r" );
 			while (!feof($file)) {
 				$name = trim(fgets($file));
-				if (strlen($name) > 0 and (strpos($name, $filter) === 1)) {
+				if (strlen($name) > 0 and (strpos($name, $filter) === 0)) {
 					echo "<li>$name</li>";
 				}
 			}
