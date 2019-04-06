@@ -55,8 +55,8 @@
 ?>	
 </ul>
 	<form action="index.php" method="post">
-	<input type="checkbox" name="startingWith">Only names starting with</input>
 	<input type="text" name="nameFilter" value="<?=$nameFilter?>">
+	<input type="checkbox" name="startingWith" <?php if ($startingWith=='TRUE') echo "checked"?> value="TRUE">Only names starting with</input>
 	<input type="submit" value="Filter list">
 	</form>
 </body> 
