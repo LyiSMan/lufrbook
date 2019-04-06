@@ -16,7 +16,7 @@
 	$filename = 'friends.txt';
 	$file = fopen( $filename, "r" );
 	while (!feof($file)) {
-    		echo fgets($file);
+    		echo trim(fgets($file));
 	}
 	
 	//$file = fopen( $filename, "a" );
